@@ -31,10 +31,10 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image: circle-gke
-          tag: "v2"
+          tag: "v3"
       - gcr/push-image:
           image: circle-gke
-          tag: "v2"
+          tag: "v3"
 
     
   deploy:
@@ -49,7 +49,7 @@ jobs:
       - gcp-gke/rollout-image:
           deployment: circle-ci-cluster
           container: dominic-backend
-          image: gcr.io/circle-ci-demo-3/circle-gke:v2
+          image: gcr.io/circle-ci-demo-3/circle-gke:v3
 
 workflows:
   build_update_deploy:
