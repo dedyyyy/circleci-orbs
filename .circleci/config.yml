@@ -14,9 +14,6 @@ jobs:
       - checkout
       # Install node
       - node/install
-      # Install npm
-      - node/install-npm
-      # Download and cache dependencies
       - node/with-cache:
           steps:
             - run:
@@ -52,7 +49,7 @@ jobs:
       - gcp-gke/rollout-image:
           deployment: circle-ci-cluster
           container: dominic-backend
-          image: gcr.io/circle-ci-demo/circle-gke:v2
+          image: gcr.io/circle-ci-demo-3/circle-gke:v2
 
 workflows:
   build_update_deploy:
